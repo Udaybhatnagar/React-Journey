@@ -1,0 +1,48 @@
+import { useState } from 'react'
+import { BrowserRouter, Routes, Route,Link } from "react-router-dom";
+
+import './App.css'
+
+function App(){
+
+  return <div>
+      <BrowserRouter>
+  <Link to="/Uday123">Go to Uday</Link>
+  <Link to="/Uday124">Go to Uday2</Link>
+
+  <Routes>
+    <Route path='/Uday123' element={<Uday/>}></Route>
+    <Route path='/Uday124' element={<Uday/>}></Route>
+    <Route path='/' element={<Landing/>}></Route>
+    <Route path='*' element={<Errorpage/>}></Route>
+  </Routes>
+  </BrowserRouter>
+  </div>
+
+  function Uday(){
+    return <div>
+      Hello Uday Bhatnagar
+    </div>
+  }
+  function Landing(){
+    return <div>
+      Welcome to my Page
+    </div>
+  }
+  function Errorpage(){
+    return <div>
+      sorry no page found....
+
+
+    </div>
+
+  }
+
+
+
+
+}
+
+export default App
+
+
